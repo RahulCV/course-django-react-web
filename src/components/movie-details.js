@@ -49,7 +49,7 @@ function MovieDetails(props){
           <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 2 ? 'orange':''} />
           <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 3 ? 'orange':''} />
           <FontAwesomeIcon icon={faStar} className={mov.avg_rating > 4 ? 'orange':''} />
-          ({mov.no_of_ratings})
+          (<span data-testid="rating">{mov.no_of_ratings}</span>)
           <div className="rate-container">
             <h2>Rate it</h2>
             { [...Array(5)].map( (e, i) => {
