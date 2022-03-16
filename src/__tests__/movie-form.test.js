@@ -1,5 +1,5 @@
 import React from "react";
-import { render, fireEvent, getByRole, wait } from "@testing-library/react";
+import { render, fireEvent, getByRole, wait, screen } from "@testing-library/react";
 import MovieForm from "../components/movie-form";
 global.fetch = require("jest-fetch-mock");
 const movie = {
@@ -55,6 +55,29 @@ describe("Movie form Test Suite  ", () => {
     fireEvent.click(submitButton);
     await wait(() => {
       expect(updatedMovie).toBeCalledTimes(0);
+    });
+  });
+
+
+  test("Should not trigger Api call when clicked on new movie button ", async () => {
+    const movieCreated = jest.fn();
+   // fetch.mockResponseOnce(JSON.stringify(movie));
+    fetch.mockResponseOnce(JSON.stringify(movie));
+    
+    const { getByRole } = render(
+      <MovieForm movie={empty_movie} movieCreated={movieCreated} />
+    );
+      const titleInput = screen.getByLabelText(/title/i);
+      const descriptionInput = screen.getByLabelText(/description/i);
+      fireEvent.change(titleInput, { target: { value: "The Shawshank Redemption" } });
+      fireEvent.change(descriptionInput, { target: { value: "Two imprisoned" } });
+
+    const submitButton = getByRole("button", { name: /create/i });
+    fireEvent.click(submitButton);
+    await wait(() => {
+      console.log(movieCreated.mock.calls);
+      //expect(movieCreated.mock.calls[0][0]).toBe(movie);
+      expect(movieCreated).toBeCalledWith(movie);
     });
   });
 });
