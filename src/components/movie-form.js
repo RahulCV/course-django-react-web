@@ -35,7 +35,7 @@ function MovieForm(props) {
           <input id="title" type="text" placeholder="title" value={title}
                 onChange={ evt=> setTitle(evt.target.value)}
           /><br/>
-          <label htmlFor="description">Descriptiom</label><br/>
+          <label htmlFor="description">Description</label><br/>
           <textarea id="description" type="text" placeholder="Descriptiom" value={description}
              onChange={ evt=> setDescription(evt.target.value)}
           ></textarea><br/>

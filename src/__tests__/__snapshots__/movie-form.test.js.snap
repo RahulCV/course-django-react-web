@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Movie form Test Suite   Movie Form Should match Snapshot  1`] = `
+<div>
+  <div>
+    <label
+      for="title"
+    >
+      Title
+    </label>
+    <br />
+    <input
+      id="title"
+      placeholder="title"
+      type="text"
+      value=""
+    />
+    <br />
+    <label
+      for="description"
+    >
+      Description
+    </label>
+    <br />
+    <textarea
+      id="description"
+      placeholder="Descriptiom"
+      type="text"
+    />
+    <br />
+    <button
+      disabled=""
+    >
+      Create
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Movie form Test Suite   Movie edit movie  1`] = `
+<div>
+  <div>
+    <label
+      for="title"
+    >
+      Title
+    </label>
+    <br />
+    <input
+      id="title"
+      placeholder="title"
+      type="text"
+      value=""
+    />
+    <br />
+    <label
+      for="description"
+    >
+      Description
+    </label>
+    <br />
+    <textarea
+      id="description"
+      placeholder="Descriptiom"
+      type="text"
+    />
+    <br />
+    <button
+      disabled=""
+    >
+      Create
+    </button>
+  </div>
+</div>
+`;
